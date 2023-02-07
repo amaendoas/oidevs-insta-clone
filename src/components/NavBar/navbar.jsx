@@ -1,7 +1,7 @@
 import * as S from "./styles"
 import logo from "../../assets/Instagram-white-logo.png"
 import { NavItem } from "../NavItem"
-import {MdHome, MdSearch, MdOutlineExplore, MdFavoriteBorder, MdOutlineAddBox, MdPersonOutline} from "react-icons/md"
+import {MdHome, MdSearch, MdOutlineExplore, MdFavoriteBorder, MdOutlineAddBox, MdPersonOutline, MdOutlineMenu} from "react-icons/md"
 import { ImFilm } from "react-icons/im"
 import { TbSend } from "react-icons/tb"
 
@@ -44,14 +44,17 @@ const items = [
 export const NavBar = () => {
   return (
     <S.Container>
+      <S.Content>
       <img src={logo} alt="" />
       {
         items.map((item) => (
-          <NavItem text={item.text} icon={item.icon} size='small' key={item.text}/>
+          <NavItem text={item.text} icon={item.icon} key={item.text}/>
         ))
       }
-
-      <NavItem text='teste' size={32} color='red'/>
+      </S.Content>
+    <S.Footer>
+      <NavItem text="Mais" icon={MdOutlineMenu}/>
+    </S.Footer>
     </S.Container>
   )
 }
