@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { NavBar } from './components/NavBar'
+import { Grid, GridItem} from './ui/Grid'
+import { Text } from './ui/Text'
 
 function App() {
 
   return (
-    <div className="App">
-      Olá
-    </div>
+    <Grid>
+      <GridItem>
+        <NavBar/>
+      </GridItem>
+      <GridItem>
+        <Text>Conteúdo</Text>
+      </GridItem>
+    </Grid>
   )
 }
 
