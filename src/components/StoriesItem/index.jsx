@@ -1,0 +1,1 @@
+export {StoriesItem} from "./storiesItem"

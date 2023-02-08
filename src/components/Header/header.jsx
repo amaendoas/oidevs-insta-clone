@@ -33,18 +33,18 @@ export const Header = () => {
         </S.ButtonsWrapper>
       </S.Title>
       <S.FollowersWrapper>
-        <TextLink>
+        <S.PublicationsInfo>
           <Text bold>211</Text>
           <Text>publicações</Text>
-        </TextLink>
-        <TextLink>
+        </S.PublicationsInfo>
+        <S.FollowersInfo>
           <Text bold>44,2 mil</Text>
           <Text>Seguidores</Text>
-        </TextLink>
-        <TextLink>
+        </S.FollowersInfo>
+        <S.FollowersInfo>
           <Text bold>2</Text>
           <Text>Seguindo</Text>
-        </TextLink>
+        </S.FollowersInfo>
       </S.FollowersWrapper>
       <S.BioWrapper>
         <Text bold>
@@ -56,11 +56,11 @@ export const Header = () => {
         <Text>
           Ada. A nova Educação.
         </Text>
-        <TextLink color="#D2E5F3">
+        <S.FollowersInfo color="#D2E5F3">
           beacons.ai/adatechbr
-        </TextLink>
+        </S.FollowersInfo>
         <S.BioFooter>
-          <Text size={12} color="#a1a1a1">
+          <S.FooterInfo size={12} color="#a1a1a1">
             Seguido por
             {
               followers.map((follower) => (
@@ -70,7 +70,7 @@ export const Header = () => {
               ))
             }
             e outras 2 pessoas
-          </Text>
+          </S.FooterInfo>
         </S.BioFooter>
       </S.BioWrapper>
      </S.Info>
