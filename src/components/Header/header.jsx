@@ -56,7 +56,7 @@ export const Header = () => {
         <Text>
           Ada. A nova Educação.
         </Text>
-        <TextLink>
+        <TextLink color="#D2E5F3">
           beacons.ai/adatechbr
         </TextLink>
         <S.BioFooter>
@@ -73,7 +73,6 @@ export const Header = () => {
           </Text>
         </S.BioFooter>
       </S.BioWrapper>
-
      </S.Info>
     </S.Container>
   )

@@ -15,4 +15,8 @@ export const Text = styled.p`
 export const TextLink = styled.a`
   ${textCss}
   cursor: pointer;
+
+  :hover {
+    filter: brightness(0.8) ;
+  }
 `
