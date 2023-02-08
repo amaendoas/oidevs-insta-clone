@@ -12,7 +12,7 @@ function App() {
       <GridItem>
         <NavBar/>
       </GridItem>
-      <GridItem>
+      <GridItem style={{margin: '0 auto', padding: '3rem 0'}}>
         <Header/>
         <Stories/>
         <UserFeed/>

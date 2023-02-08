@@ -1,13 +1,20 @@
 import styled from "styled-components";
 
-export const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 100%;
-  grid-template-areas: "nav content";
-  height: 100vh;
-  `
+export const Grid = styled.div((style) => {
+  return {
+    display: 'grid',
+    gridTemplateColumns: '1fr 4fr',
+    gridTemplateRows: '100%',
+    height: '100vh',
+    ...(style ? style : '')
+  }
+})
+  
 
-export const GridItem = styled.div `
-  height: 100%;
-  `
+export const GridItem = styled.div((style) => {
+  return {
+    height: '100%',
+    ...(style ? style : '')
+  }
+})
+  
