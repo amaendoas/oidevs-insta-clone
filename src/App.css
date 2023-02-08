@@ -5,14 +5,18 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  color: #fff
 }
 
 body {
   background-color: #131313;
+  color: #fff;
 }
 
 button {
   border: none;
   background-color: transparent;
+}
+
+button, a {
+  cursor: pointer;
 }

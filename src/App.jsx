@@ -1,7 +1,9 @@
 import './App.css'
+import { Header } from './components/Header'
 import { NavBar } from './components/NavBar'
+import { Stories } from './components/Stories'
+import { UserFeed } from './components/UserFeed'
 import { Grid, GridItem} from './ui/Grid'
-import { Text } from './ui/Text'
 
 function App() {
 
@@ -11,7 +13,9 @@ function App() {
         <NavBar/>
       </GridItem>
       <GridItem>
-        <Text>Conteúdo</Text>
+        <Header/>
+        <Stories/>
+        <UserFeed/>
       </GridItem>
     </Grid>
   )

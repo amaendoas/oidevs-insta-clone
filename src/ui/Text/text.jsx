@@ -4,6 +4,8 @@ const textCss = css`
   color: ${({color}) => color ? color : "#fff"};
   font-weight: ${({bold}) => (bold ? "900" : "")};
   font-size: ${({size}) => size ? `${size}px` : '14px'};
+  display: flex;
+  gap: 5px;
 `;
 
 export const Text = styled.p`
