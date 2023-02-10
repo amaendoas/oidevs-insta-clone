@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  cursor: pointer;
   display: flex;
-  width: fit-content;
   align-items: center;
-  gap: 1rem;
-  padding: 10px;
+  padding-top: 1rem;
+  gap: 5px;
+  
+  ${({activeTab}) => activeTab ? "border-top: 2px solid #fff" : ""}
+  
 `

@@ -24,7 +24,7 @@ export const Stories = () => {
     <S.Container>
       {
         items.map((item) => (
-          <StoriesItem src={item.image} text={item.text}/>
+          <StoriesItem src={item.image} key={item.text} text={item.text}/>
         ))
       }
     </S.Container>

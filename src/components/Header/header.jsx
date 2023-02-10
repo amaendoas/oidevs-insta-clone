@@ -33,10 +33,10 @@ export const Header = () => {
         </S.ButtonsWrapper>
       </S.Title>
       <S.FollowersWrapper>
-        <S.PublicationsInfo>
+        <S.PostsInfo>
           <Text bold>211</Text>
           <Text>publicações</Text>
-        </S.PublicationsInfo>
+        </S.PostsInfo>
         <S.FollowersInfo>
           <Text bold>44,2 mil</Text>
           <Text>Seguidores</Text>

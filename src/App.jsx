@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import './App.css'
 import { Header } from './components/Header'
 import { NavBar } from './components/NavBar'
+import { Posts } from './components/Posts'
 import { Stories } from './components/Stories'
-import { UserFeed } from './components/UserFeed'
+import { TabMenu } from './components/TabMenu'
 import { Grid, GridItem} from './ui/Grid'
 
 function App() {
+  const [activeTab, setActiveTab] = useState("posts");
 
   return (
     <Grid>
@@ -15,7 +18,8 @@ function App() {
       <GridItem style={{margin: '0 auto', padding: '3rem 0'}}>
         <Header/>
         <Stories/>
-        <UserFeed/>
+        <TabMenu activeTab={activeTab} onChangeTab={setActiveTab}/>
+        {activeTab === 'posts' && <Posts/>}
       </GridItem>
     </Grid>
   )

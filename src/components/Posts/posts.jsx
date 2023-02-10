@@ -1,9 +1,9 @@
 import * as S from "./styles"
 
-export const UserFeed = () => {
+export const Posts = () => {
   return (
     <S.Container>
-      Feed
+      Posts
     </S.Container>
   )
 }

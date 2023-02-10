@@ -30,7 +30,7 @@ export const FollowersInfo = styled(TextLink)`
   ${flexDefault}
 `
 
-export const PublicationsInfo = styled(Text)`
+export const PostsInfo = styled.div`
   ${flexDefault}
 `
 
