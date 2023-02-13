@@ -24,10 +24,10 @@ export const Header = () => {
      <Avatar/>
      <S.Info>
       <S.Title>
-        <Text size={16}>adatechbr</Text>
+        <Text size={18}>adatechbr</Text>
         <S.ButtonsWrapper>
-          <Button text='Seguindo' icon={MdExpandMore}/>
-          <Button text='Enviar mensagem'/>
+          <Button text='Seguindo' icon={MdExpandMore} medium/>
+          <Button text='Enviar mensagem' medium/>
           <Button icon={MdPersonAddAlt}/>
           <Button icon={MdOutlineMoreHoriz} color='#fff' bg='transparent' iconSize={24}/>
         </S.ButtonsWrapper>

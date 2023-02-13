@@ -6,17 +6,22 @@ export const Container = styled.div`
   width: 253px;
   background-color: #010101;
   display: grid;
-  grid-template-rows: auto 50px;
+  grid-template-rows: auto 100px;
   position: fixed;
+  border-right: 1px solid #333333;
 
   img {
     width: 7rem;
   }
-  
+
+  button {
+    width: 100%;
+  }
+
   button:hover {
-    background-color: #131313;
-    border-radius: 8px;
-    transition: 0.3s;
+    background-color: #121212;
+    border-radius: 10px;
+    transition: 0.5s;
   }
 `
 
@@ -30,5 +35,6 @@ export const Footer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
 `

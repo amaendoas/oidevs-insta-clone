@@ -1,7 +1,7 @@
 import * as S from "./styles"
 import { fetcher } from "../../services"
 import { useEffect, useState } from "react"
-import { FeedItem } from "../FeedItem"
+import { PostItem } from "../PostItem"
 
 export const Posts = () => {
   const [imagesList, setImagesList] = useState([])
@@ -9,7 +9,6 @@ export const Posts = () => {
     try {
       const response = await fetcher('photos')
       setImagesList(response)
-      console.log(response)
     } catch(error) {
       console.error(error)
     }
@@ -21,13 +20,15 @@ export const Posts = () => {
     <S.Container>
       {imagesList.map((image, index) => {
         if(index < 3) {
-          return <FeedItem src={image.urls.small} fixed/>
+          return <PostItem key={image.id} src={image.urls.small} fixed/>
+        } else if(index >= 9) {
+          return
+        } else {
+          return (
+          <PostItem key={image.id} src={image.urls.small}/>
+          )
         }
-
-        if(index)
-        return (
-        <FeedItem src={image.urls.small}/>
-      )})}
+      })}
     </S.Container>
   )
 }

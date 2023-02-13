@@ -1,1 +1,0 @@
-export { FeedItem } from './feedItem'

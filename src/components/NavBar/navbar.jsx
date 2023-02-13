@@ -4,7 +4,9 @@ import { NavItem } from "../NavItem"
 import {MdHome, MdSearch, MdOutlineExplore, MdFavoriteBorder, MdOutlineAddBox, MdPersonOutline, MdOutlineMenu} from "react-icons/md"
 import { ImFilm } from "react-icons/im"
 import { TbSend } from "react-icons/tb"
+import {FiLogOut} from "react-icons/fi"
 
+export const NavBar = ({onLogOut}) => {
 const items = [
   {
     text: "Página Inicial",
@@ -40,8 +42,6 @@ const items = [
   }
 ];
 
-
-export const NavBar = () => {
   return (
     <S.Container>
       <S.Content>
@@ -53,6 +53,7 @@ export const NavBar = () => {
       }
       </S.Content>
     <S.Footer>
+      <NavItem text="Sair" icon={FiLogOut} onClick={onLogOut} />
       <NavItem text="Mais" icon={MdOutlineMenu}/>
     </S.Footer>
     </S.Container>

@@ -1,40 +1,27 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css'
-import { Header } from './components/Header'
-import { NavBar } from './components/NavBar'
-import { Posts } from './components/Posts'
-import { Stories } from './components/Stories'
-import { TabMenu } from './components/TabMenu'
-import { Grid, GridItem} from './ui/Grid'
-import styled from 'styled-components'
-import { Reels } from './components/Reels'
-import { Mentions } from './components/Mentions'
+import { Login } from './pages/Login';
+import { Profile } from './pages/Profile';
+import { SignUp } from './pages/SignUp/signUp';
 
-const ContentWrapper = styled.div`
-  height: 100%;
-  max-width: 935px;
-  padding-top: 3rem;
-  margin: 0 auto;
-`;
 function App() {
-    const [activeTab, setActiveTab] = useState("posts");
+  const [currentPage, setCurrentPage] = useState("login")
 
   return (
-    <Grid>
-      <GridItem>
-        <NavBar/>
-      </GridItem>
-      <GridItem>
-        <ContentWrapper>
-          <Header/>
-          <Stories/>
-          <TabMenu activeTab={activeTab} onChangeTab={setActiveTab}/>
-          {activeTab === 'posts' && <Posts/>}
-          {activeTab === 'reels' && <Reels/>}
-          {activeTab === 'mentions' && <Mentions/>}
-        </ContentWrapper>
-      </GridItem>
-    </Grid>
+    <>
+    {currentPage === 'profile' &&
+    <Profile
+    onLogOut={() => setCurrentPage("login")}/>}
+
+    {currentPage === 'login' &&
+    <Login
+    onLogin={() => setCurrentPage("profile")}
+    onClickSignUpPage={() => setCurrentPage("signUp")}/>}
+
+    {currentPage === 'signUp' &&
+    <SignUp
+    onClickLoginPage={() => setCurrentPage("login")}/>}
+    </>
   )
 }
 
