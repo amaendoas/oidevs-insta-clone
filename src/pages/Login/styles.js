@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FormContainer } from '../../components/FormContainer';
+import { FormContainer } from '../../ui/FormContainer';
 
 export const Container = styled.div`
   width: 100%;
@@ -13,11 +13,17 @@ export const Container = styled.div`
 
 export const ContentWrapper = styled(FormContainer)`
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-`
+  height: fit-content;
+  padding: 40px;
+`;
 
 export const FooterWrapper = styled(FormContainer)`
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
   height: 10vh;
 `;
