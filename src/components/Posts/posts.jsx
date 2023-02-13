@@ -13,15 +13,14 @@ export const Posts = () => {
       setShowLoading(true)
       const response = await fetcher('photos')
       setImagesList(response)
+      setShowLoading(false)
     } catch(error) {
       setShowLoading(false)
       console.error(error)
     }
   }
   useEffect(() => {
-    setTimeout(()=>{
       getImages()
-    }, 3000)
   }, [])
 
   return (
