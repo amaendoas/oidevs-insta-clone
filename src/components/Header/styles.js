@@ -9,12 +9,13 @@ export const flexDefault = css`
 export const Container = styled.div`
   ${flexDefault}
   align-items: center;
+  margin-left: 4rem;
   margin-bottom: 3rem;
 `
 
 export const Info = styled.div`
   ${flexDefault}
-  margin-left: 3rem;
+  margin-left: 5rem;
   flex-direction: column;
   gap: 1rem;
 `

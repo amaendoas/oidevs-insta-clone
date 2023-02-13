@@ -11,8 +11,8 @@ export const TabMenu = ({activeTab, onChangeTab}) => {
       iconSize={14}
       text='Publicações'
       icon={MdAutoAwesomeMosaic}
-      activeTab={activeTab === 'posts'}
       onClick={() => onChangeTab('posts')}
+      activeTab={activeTab === 'posts'}
       />
 
       <TabItem
@@ -20,8 +20,8 @@ export const TabMenu = ({activeTab, onChangeTab}) => {
       iconSize={14}
       text='Reels'
       icon={ImFilm}
-      activeTab={activeTab === 'reels'}
       onClick={() => onChangeTab('reels')}
+      activeTab={activeTab === 'reels'}
       />
 
       <TabItem
@@ -29,8 +29,8 @@ export const TabMenu = ({activeTab, onChangeTab}) => {
       iconSize={14}
       text='Marcados'
       icon={MdOutlinePersonPin}
-      activeTab={activeTab === 'marked'}
-      onClick={() => onChangeTab('marked')}
+      onClick={() => onChangeTab('mentions')}
+      activeTab={activeTab === 'mentions'}
       />
     </S.Container>
   )

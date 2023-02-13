@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   padding: 1rem;
   height: 100%;
+  width: 253px;
   background-color: #010101;
   display: grid;
-  grid-template-rows: auto 20px;
-  
+  grid-template-rows: auto 50px;
+  position: fixed;
+
   img {
-    width: 8rem;
+    width: 7rem;
   }
   
   button:hover {
@@ -25,4 +27,8 @@ export const Content = styled.div`
 `
 
 export const Footer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 `
