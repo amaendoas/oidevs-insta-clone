@@ -1,9 +1,9 @@
-import * as S from "./styles"
 import logo from "../../assets/Instagram-white-logo.png"
-import { Button } from "../../ui/Button/button"
-import { Input } from "../../components/Input"
+import { Button } from "../../ui/Button"
+import { Input } from "../../ui/Input"
 import { Text, TextLink } from "../../ui/Text"
 import { useState } from "react"
+import { FormContainer, FormContent, FormFooter } from "../../ui/Form"
 
 export const Login = ({onLogin, onClickSignUpPage}) => {
   const [username, setUsername] = useState("");
@@ -19,8 +19,8 @@ export const Login = ({onLogin, onClickSignUpPage}) => {
   }
 
   return (
-    <S.Container>
-     <S.ContentWrapper>
+    <FormContainer>
+     <FormContent>
       <img src={logo} alt="" />
       <Input
       type="text"
@@ -46,17 +46,17 @@ export const Login = ({onLogin, onClickSignUpPage}) => {
       />
 
       <TextLink>Esqueceu sua senha?</TextLink>
-     </S.ContentWrapper>
+     </FormContent>
 
-     <S.FooterWrapper>
+     <FormFooter>
       <Text>Ainda não tem conta?</Text>
       <TextLink
       medium
       color="#0095f6"
       onClick={onClickSignUpPage}
       > Cadastre-se </TextLink>
-     </S.FooterWrapper>
+     </FormFooter>
 
-    </S.Container>
+    </FormContainer>
   )
 }

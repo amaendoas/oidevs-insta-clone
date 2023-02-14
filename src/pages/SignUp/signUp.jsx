@@ -1,10 +1,9 @@
-import * as S from "./styles"
 import logo from "../../assets/Instagram-white-logo.png"
-import { Input } from "../../components/Input"
-import { ContentWrapper, FooterWrapper } from "../Login/styles"
+import { Input } from "../../ui/Input"
 import { Text, TextLink } from "../../ui/Text"
 import { Button } from "../../ui/Button/button"
 import { useState } from "react"
+import { FormContainer, FormContent, FormFooter } from "../../ui/Form"
 
 export const SignUp = ({onClickLoginPage}) => {
   const [username, setUsername] = useState("")
@@ -24,8 +23,8 @@ export const SignUp = ({onClickLoginPage}) => {
   }
 
   return (
-    <S.Container>
-      <ContentWrapper>
+    <FormContainer>
+      <FormContent>
         <img src={logo} alt="" />
         <Input
         label="Username"
@@ -63,15 +62,15 @@ export const SignUp = ({onClickLoginPage}) => {
           medium
           onClick={handleSignUp}
         />
-      </ContentWrapper>
-      <FooterWrapper>
+      </FormContent>
+      <FormFooter>
       <Text>Já tem conta?</Text>
       <TextLink
       medium
       color="#0095f6"
       onClick={onClickLoginPage}
       > Fazer login</TextLink>
-      </FooterWrapper>
-    </S.Container>
+      </FormFooter>
+    </FormContainer>
   )
 }
