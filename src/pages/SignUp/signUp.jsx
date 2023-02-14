@@ -11,7 +11,8 @@ export const SignUp = ({onClickLoginPage}) => {
   const [password, setPassword] = useState("")
   const [age, setAge] = useState("")
 
-  const handleSignUp = () => {
+  const handleSignUp = (e) => {
+    e.preventDefault()
     if(!username || !email || !password || !age) {
       alert('Preencha todos os campos!')
     } else if(password.length < 6) {

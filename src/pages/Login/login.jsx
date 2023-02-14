@@ -9,7 +9,8 @@ export const Login = ({onLogin, onClickSignUpPage}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState('')
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault()
     if(!username || !password) {
       alert('Preencha todos os campos!')
     } else {
