@@ -5,8 +5,10 @@ import {MdHome, MdSearch, MdOutlineExplore, MdFavoriteBorder, MdOutlineAddBox, M
 import { ImFilm } from "react-icons/im"
 import { TbSend } from "react-icons/tb"
 import {FiLogOut} from "react-icons/fi"
+import { useContext } from "react"
+import { InstaContext } from "../../context"
 
-export const NavBar = ({onLogOut}) => {
+export const NavBar = () => {
 const items = [
   {
     text: "Página Inicial",
@@ -41,6 +43,12 @@ const items = [
     icon: MdPersonOutline
   }
 ];
+
+const { dispatch } = useContext(InstaContext)
+
+const onLogOut = () => {
+  dispatch({type: "change_current_page", payload: "login"})
+}
 
   return (
     <S.Container>

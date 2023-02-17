@@ -1,27 +1,24 @@
-import { useState } from 'react';
+import { createContext, useReducer } from 'react';
 import './App.css'
 import { Login } from './pages/Login';
 import { Profile } from './pages/Profile';
 import { SignUp } from './pages/SignUp/signUp';
+import { InstaContext, reducer, initialState } from "./context"
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("login")
+  const [globalState, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <>
-    {currentPage === 'profile' &&
-    <Profile
-    onLogOut={() => setCurrentPage("login")}/>}
+    <InstaContext.Provider value={{globalState, dispatch}}>
+      {globalState.currentPage === 'profile' &&
+      <Profile/>}
 
-    {currentPage === 'login' &&
-    <Login
-    onLogin={() => setCurrentPage("profile")}
-    onClickSignUpPage={() => setCurrentPage("signUp")}/>}
+      {globalState.currentPage === 'login' &&
+      <Login/>}
 
-    {currentPage === 'signUp' &&
-    <SignUp
-    onClickLoginPage={() => setCurrentPage("login")}/>}
-    </>
+      {globalState.currentPage === 'signUp' &&
+      <SignUp/>}
+    </InstaContext.Provider>
   )
 }
 

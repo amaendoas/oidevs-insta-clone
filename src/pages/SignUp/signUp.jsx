@@ -2,14 +2,21 @@ import logo from "../../assets/Instagram-white-logo.png"
 import { Input } from "../../ui/Input"
 import { Text, TextLink } from "../../ui/Text"
 import { Button } from "../../ui/Button/button"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { FormContainer, FormContent, FormFooter } from "../../ui/Form"
-
-export const SignUp = ({onClickLoginPage}) => {
+import { InstaContext } from "../../context"
+       
+export const SignUp = () => {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [age, setAge] = useState("")
+
+  const { dispatch } = useContext(InstaContext)
+
+  const goToLoginPage = () => {
+    dispatch({type: "change_current_page", payload: "login"})
+  }
 
   const handleSignUp = (e) => {
     e.preventDefault()
@@ -19,7 +26,7 @@ export const SignUp = ({onClickLoginPage}) => {
       alert('A senha deve conter no mínimo 6 caracteres')
     } else {
       alert(`username: ${username}, email: ${email}, senha: ${password}, idade: ${age}`)
-      onClickLoginPage()
+      goToLoginPage()
     }
   }
 
@@ -69,7 +76,7 @@ export const SignUp = ({onClickLoginPage}) => {
       <TextLink
       medium
       color="#0095f6"
-      onClick={onClickLoginPage}
+      onClick={goToLoginPage}
       > Fazer login</TextLink>
       </FormFooter>
     </FormContainer>

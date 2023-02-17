@@ -10,13 +10,13 @@ import { Grid, GridItem } from "../../ui/Grid";
 import * as S from "./styles"
 
 
-export const Profile = ({onLogOut}) => {
+export const Profile = () => {
   const [activeTab, setActiveTab] = useState("posts");
 
   return (
     <Grid>
       <GridItem>
-        <NavBar onLogOut={onLogOut}/>
+        <NavBar/>
       </GridItem>
       <GridItem>
         <S.ContentWrapper>

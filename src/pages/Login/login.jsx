@@ -4,20 +4,33 @@ import { Input } from "../../ui/Input"
 import { Text, TextLink } from "../../ui/Text"
 import { useState } from "react"
 import { FormContainer, FormContent, FormFooter } from "../../ui/Form"
+import { useContext } from "react"
+import { InstaContext } from "../../context"
 
-export const Login = ({onLogin, onClickSignUpPage}) => {
+export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState('')
+
+  const { dispatch } = useContext(InstaContext)
+
+ const onLogin = () => {
+  dispatch({type: "change_current_page", payload: "profile"})
+  dispatch({type: "add_user", payload: {username: username}})
+ }
+
+ const onClickSignUpPage = () => {
+  dispatch({type: "change_current_page", payload: "signUp"})
+ }
 
   const handleLogin = (e) => {
     e.preventDefault()
     if(!username || !password) {
       alert('Preencha todos os campos!')
     } else {
-      alert(`username: ${username}, senha: ${password}`)
       onLogin()
     }
   }
+
 
   return (
     <FormContainer>

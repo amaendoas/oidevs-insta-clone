@@ -3,8 +3,12 @@ import { Text, TextLink } from "../../ui/Text"
 import { Avatar } from "../Avatar"
 import * as S from "./styles"
 import {MdExpandMore, MdPersonAddAlt, MdOutlineMoreHoriz} from "react-icons/md"
+import { useContext } from "react"
+import { InstaContext } from "../../context"
 
 export const Header = () => {
+  const { globalState } = useContext(InstaContext)
+
   const followers = [
     {
       user: 'machado_bru',
@@ -19,12 +23,13 @@ export const Header = () => {
       scr: ''
     },
   ]
+
   return (
     <S.Container>
      <Avatar/>
      <S.Info>
       <S.Title>
-        <Text size={18}>adatechbr</Text>
+        <Text size={18}>{globalState.user.username}</Text>
         <S.ButtonsWrapper>
           <Button text='Seguindo' icon={MdExpandMore} medium/>
           <Button text='Enviar mensagem' medium/>
